@@ -51,8 +51,8 @@ Sankar-NOVA/
 
 ### 1. Clone the repository
 ```bash
-git clone <your-repo-url>
-cd Sankar-NOVA
+git clone https://github.com/gangotrigupta-61/NOVA-.git
+cd NOVA-
 ```
 
 ### 2. Set up the backend
@@ -88,9 +88,9 @@ JWT_SECRET=your_super_secret_key_here
 CLIENT_URL=http://localhost:5173
 ```
 
-### Frontend (`client/.env`) — production only
+### Frontend (`client/.env`) — production / Vercel deployment
 ```env
-VITE_API_URL=https://your-nova-api.onrender.com/api
+VITE_API_URL=https://nova-sp2j.onrender.com/api
 ```
 
 ---
@@ -113,18 +113,20 @@ VITE_API_URL=https://your-nova-api.onrender.com/api
    - `MONGODB_URI` → your Atlas connection string
    - `JWT_SECRET` → a long random string
    - `CLIENT_URL` → your Vercel URL (add after step 3)
-7. Deploy — note your Render URL (e.g. `https://nova-api.onrender.com`)
+7. ✅ **Already deployed at**: `https://nova-sp2j.onrender.com`
 
 ### Step 3 — Frontend on Vercel
 1. Go to [vercel.com](https://vercel.com) → New Project
 2. Connect your GitHub repo
 3. Set **Root Directory** to `client`
 4. Add environment variable:
-   - `VITE_API_URL` → `https://nova-api.onrender.com/api`
+   - `VITE_API_URL` → `https://nova-sp2j.onrender.com/api`
 5. Deploy — note your Vercel URL
 
 ### Step 4 — Update CORS on Render
 Go back to Render and set `CLIENT_URL` to your Vercel URL (e.g. `https://nova.vercel.app`). Redeploy.
+
+> **Live Backend**: `https://nova-sp2j.onrender.com` · Health check: `https://nova-sp2j.onrender.com/api/health`
 
 ---
 
