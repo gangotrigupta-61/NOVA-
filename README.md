@@ -112,7 +112,7 @@ VITE_API_URL=https://nova-sp2j.onrender.com/api
 6. Add environment variables:
    - `MONGODB_URI` → your Atlas connection string
    - `JWT_SECRET` → a long random string
-   - `CLIENT_URL` → your Vercel URL (add after step 3)
+   - `CLIENT_URL` → `https://nova-topaz-eight.vercel.app`
 7. ✅ **Already deployed at**: `https://nova-sp2j.onrender.com`
 
 ### Step 3 — Frontend on Vercel
@@ -121,12 +121,15 @@ VITE_API_URL=https://nova-sp2j.onrender.com/api
 3. Set **Root Directory** to `client`
 4. Add environment variable:
    - `VITE_API_URL` → `https://nova-sp2j.onrender.com/api`
-5. Deploy — note your Vercel URL
+5. ✅ **Already deployed at**: `https://nova-topaz-eight.vercel.app`
 
 ### Step 4 — Update CORS on Render
-Go back to Render and set `CLIENT_URL` to your Vercel URL (e.g. `https://nova.vercel.app`). Redeploy.
+Go back to Render and set `CLIENT_URL` to `https://nova-topaz-eight.vercel.app`. Redeploy.
 
-> **Live Backend**: `https://nova-sp2j.onrender.com` · Health check: `https://nova-sp2j.onrender.com/api/health`
+> **🌐 Live URLs**
+> - **Frontend**: https://nova-topaz-eight.vercel.app
+> - **Backend**: https://nova-sp2j.onrender.com
+> - **Health check**: https://nova-sp2j.onrender.com/api/health
 
 ---
 
