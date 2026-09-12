@@ -16,12 +16,13 @@ connectDB();
 
 // Middleware
 const allowedOrigins = [
-  process.env.CLIENT_URL || 'http://localhost:5173', // production: Vercel URL
-  'http://localhost:5173',                            // local dev
+  'https://nova-topaz-eight.vercel.app',              // production: Vercel
+  process.env.CLIENT_URL,                             // any extra URL from env
+  'http://localhost:5173',                            // local dev (Vite)
   'http://localhost:3000',                            // alternate local dev port
-];
+].filter(Boolean); // remove undefined/empty values
 
-app.use(cors({
+const corsOptions = {
   origin: (origin, callback) => {
     // Allow requests with no origin (mobile apps, curl, Postman)
     if (!origin) return callback(null, true);
@@ -29,7 +30,13 @@ app.use(cors({
     callback(new Error(`CORS: origin ${origin} not allowed`));
   },
   credentials: true,
-}));
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+};
+
+// Handle OPTIONS preflight requests for all routes
+app.options('*', cors(corsOptions));
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(morgan('dev'));
 
